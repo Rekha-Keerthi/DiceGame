@@ -1,4 +1,3 @@
-
 package Game;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,44 +9,62 @@ public class DiceGame {
         System.out.println("===WELCOME TO THE DICE GAME===");
         
         Scanner scanner = new Scanner(System.in);
-        boolean invalidInput =true;
+        boolean invalidRounds =true;
+        boolean invalidSides=true;
 
-                //Ask how many rounds the user wants to play
-                System.out.print("How many rounds do you want to play?: \n");
-                int numberOfRounds = scanner.nextInt();
+        //Ask how many rounds the user wants to play
+        System.out.print("How many rounds do you want to play?: \n");
+        int numberOfRounds = scanner.nextInt();
 
-                //Adding try catch block when user enters less than zero or zero value , to ask again the user to enter valid whole integer to continue the game
-                    while(invalidInput)
+        //Adding try catch block, when user enters less than zero or zero value , to ask again the user to enter valid whole integer to continue the game
+        while(invalidRounds)
+        {
+            try{
+                   
+                    if(numberOfRounds <= 0)
                     {
-                        try{
-                        
-                        if(numberOfRounds <= 0)
-                        {
-                            System.out.println("User must enter the valid whole number.\n");
-                            System.out.print("How many rounds do you want to play?: \n");
-                            numberOfRounds = scanner.nextInt();
-
-                            if (numberOfRounds<=0) {
-                                System.out.println("Rounds must be greater than 0.");
-                            }
-                        }
-                        else
-                            {
-                                invalidInput = false;
-                            }
-                     }catch (InputMismatchException e)
-                    {
-                    System.out.println("User must enter the valid whole number.");
-                    scanner.nextLine();
+                        System.out.println("Rounds must be greater than 0.\n");
+                        System.out.print("How many rounds do you want to play?:");
+                        numberOfRounds = scanner.nextInt();
                     }
+                    else
+                    {
+                        invalidRounds = false;
+                    }
+                            
+                }catch (InputMismatchException e)
+                {
+                System.out.println("ERROR!! User must enter the valid whole number. " + e.getMessage());
+                
+                 scanner.next();
                 }
+        }
                
-
-
-               
-                 //Ask how many sides of the die the user have
-                System.out.print("How many sides does your die have?: ");
-                int sides = scanner.nextInt();  
+        //Ask how many sides of the die the user have
+        System.out.print("How many sides does your die have?: ");
+        int sides = scanner.nextInt();  
+        while(invalidSides)
+        {
+            try{
+                   
+                if(sides < 2 )
+                {
+                        System.out.println("Sides must be at least 2.\n");
+                         System.out.print("How many sides does your die have?:");
+                        sides = scanner.nextInt();         
+                }
+                else
+                {
+                        invalidSides = false;
+                }
+                            
+                }catch (InputMismatchException e)
+                {
+                System.out.println("ERROR!! User must enter the valid whole number.");
+                scanner.next();
+                }
+                
+        }
 
                 //Ask players name
                 System.out.print("Enter the name of the player: ");
@@ -85,7 +102,8 @@ public class DiceGame {
                         +"\nCurrent score is: " + player.getScore()
                     );
                 }
-                else if ( guessOfThePlayer > sides) {
+                //when the user guesses a number greater than 6 sided die , points should decrease by 1
+                else if ( guessOfThePlayer > result) {
                     player.decreaseScore();
                     System.out.println("Guessed score is greater than result, so you get minus 1 point." +
                         "\nCurrent score is: " + player.getScore()
