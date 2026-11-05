@@ -38,8 +38,12 @@ public class Player {
     public int getDieValue(){
         return dice.getCurrentValue();
     }
-public void increaseScore(){
+    public void increaseScore(){
     score++;
 
-}
+    }
+
+    public void decreaseScore(){
+        score--;
+    }
 }
