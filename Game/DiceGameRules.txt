@@ -1,0 +1,24 @@
+Throughout the project, we worked together on developing all the classes, methods and game logic without dividing the tasks between us.
+
+Before coding, we both reviewed the Dice Game requirements in the Word document, discussed the responsibilities of each class, 
+and analysed how the methods in the `Die` and `Player` classes should behave. We also shared our individual notes and understanding of the overall game flow.
+
+We then created a Git repository and a separate branch for development. Once the game was implemented according to the requirements, we pushed our changes to the main repository.
+
+After completing the mandatory single-player functionality, we tested the game together using both valid and invalid inputs. 
+We tested scenarios such as negative numbers, decimal values and text inputs. When we noticed that invalid inputs caused the program to terminate unexpectedly, 
+we identified the issues and implemented exception handling using `try-catch` blocks to make the game more robust.
+
+
+Individual contribution:
+
+Initially, I used a while loop and try-catch block to validate the number of rounds. However, I placed the initial `scanner.nextInt()` outside the try-catch block. 
+This caused the program to terminate unexpectedly when the user entered a string because the exception was not handled. I debugged the code by setting breakpoints to understand where the program was failing. 
+
+After identifying the issue with the help of AI, I changed the logic by initializing numberOfRounds to 0 and moving the input statement inside the try-catch block within the while loop.
+Initializing it to 0 ensures that the loop executes at least once, while the condition numberOfRounds <= 0 keeps asking the user until a positive integer is entered. 
+The try-catch block handles non-numeric inputs, preventing the program from crashing.
+
+After fixing the logic, I tested all input fields with valid and invalid values to ensure that users could re-enter valid inputs and continue playing without the program terminating unexpectedly.
+
+I used Claude to generate a project report covering the game rules, instructions for starting the game, an overview of classes and methods, key coding decisions, and details of the testing and debugging process.
