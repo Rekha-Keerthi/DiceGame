@@ -1,24 +1,90 @@
-Throughout the project, we worked together on developing all the classes, methods and game logic without dividing the tasks between us.
+1. If you worked together and did not have specific tasks, mention that.
+Simple English
+Throughout the project, we worked together on developing all the classes, methods and game logic. We did not divide the tasks between us.
 
-Before coding, we both reviewed the Dice Game requirements in the Word document, discussed the responsibilities of each class, 
-and analysed how the methods in the `Die` and `Player` classes should behave. We also shared our individual notes and understanding of the overall game flow.
+Before starting the coding, we both read the Dice Game requirements in the Word document. We discussed the purpose of each class and how the methods in the Die and Player classes should work. We also shared our notes and understanding of how the game should work.
 
-We then created a Git repository and a separate branch for development. Once the game was implemented according to the requirements, we pushed our changes to the main repository.
+We created a Git repository and a separate development branch. After implementing the game according to the requirements, we pushed our changes to the main repository.
 
-After completing the mandatory single-player functionality, we tested the game together using both valid and invalid inputs. 
-We tested scenarios such as negative numbers, decimal values and text inputs. When we noticed that invalid inputs caused the program to terminate unexpectedly, 
-we identified the issues and implemented exception handling using `try-catch` blocks to make the game more robust.
+After completing the single-player functionality, we tested the game together using both valid and invalid inputs. For example, we tested negative numbers, decimal numbers and text inputs. We noticed that some invalid inputs caused the program to crash. Therefore, we worked together to find the problems and added try-catch blocks to handle errors and make the game more stable.
+Enkel svenska
+Under hela projektet arbetade vi tillsammans med att utveckla alla klasser, metoder och spellogiken. Vi delade inte upp arbetet mellan oss.
 
+Innan vi började programmera läste vi båda kraven för tärningsspelet i Word-dokumentet. Vi diskuterade vad varje klass skulle göra och hur metoderna i klasserna Die och Player skulle fungera. Vi delade också våra anteckningar och vår förståelse av hur spelet skulle fungera.
 
-Individual contribution:
+Vi skapade ett Git-repository och en separat utvecklingsbranch. När vi hade programmerat spelet enligt kraven skickade vi våra ändringar till huvudrepositoryt.
 
-Initially, I used a while loop and try-catch block to validate the number of rounds. However, I placed the initial `scanner.nextInt()` outside the try-catch block. 
-This caused the program to terminate unexpectedly when the user entered a string because the exception was not handled. I debugged the code by setting breakpoints to understand where the program was failing. 
+När vi var klara med funktionerna för en spelare testade vi spelet tillsammans med både giltiga och ogiltiga inmatningar. Vi testade till exempel negativa tal, decimaltal och text. Vi märkte att vissa felaktiga inmatningar gjorde att programmet avslutades. Därför arbetade vi tillsammans för att hitta problemen och lade till try-catch för att hantera fel och göra spelet mer stabilt.
+2. Mention which parts of the code you can explain well.
+Simple English
+I can explain most parts of the code. I understand how the different classes and methods work together. I can also explain the game flow, debug the code and show how the game works step by step.
+Enkel svenska
+Jag kan förklara de flesta delarna av koden. Jag förstår hur de olika klasserna och metoderna fungerar tillsammans. Jag kan också förklara hur spelet fungerar steg för steg och hur man felsöker koden.
+3. If you found any bugs and how you solved them.
+Simple English
+Initially, I used a while loop and a try-catch block to check the number of rounds entered by the user. However, I placed the first scanner.nextInt() outside the try-catch block.
 
-After identifying the issue with the help of AI, I changed the logic by initializing numberOfRounds to 0 and moving the input statement inside the try-catch block within the while loop.
-Initializing it to 0 ensures that the loop executes at least once, while the condition numberOfRounds <= 0 keeps asking the user until a positive integer is entered. 
-The try-catch block handles non-numeric inputs, preventing the program from crashing.
+Because of this, the program crashed when the user entered text instead of a number. The error was not handled.
 
-After fixing the logic, I tested all input fields with valid and invalid values to ensure that users could re-enter valid inputs and continue playing without the program terminating unexpectedly.
+I used breakpoints to debug the code and understand where the problem occurred.
 
-I used Claude to generate a project report covering the game rules, instructions for starting the game, an overview of classes and methods, key coding decisions, and details of the testing and debugging process.
+With the help of AI, I understood the problem and changed the code. I initialized numberOfRounds to 0 and moved the input statement inside the try-catch block within the while loop.
+
+By setting the initial value to 0, the loop runs at least once. The condition numberOfRounds <= 0 makes sure that the user is asked again until they enter a positive number. The try-catch block handles text inputs and prevents the program from crashing.
+
+After fixing the problem, I tested all input fields with both valid and invalid values. This helped me make sure that users could enter the correct values again without the program stopping unexpectedly.
+Enkel svenska
+I början använde jag en while-loop och ett try-catch-block för att kontrollera hur många rundor användaren ville spela. Men jag placerade den första scanner.nextInt() utanför try-catch-blocket.
+
+Därför kraschade programmet när användaren skrev text i stället för ett nummer. Felet hanterades inte av programmet.
+
+Jag använde breakpoints för att felsöka koden och förstå var problemet uppstod.
+
+Med hjälp av AI förstod jag problemet och ändrade koden. Jag satte startvärdet för numberOfRounds till 0 och flyttade inmatningen inuti try-catch-blocket i while-loopen.
+
+När startvärdet är 0 körs loopen minst en gång. Villkoret numberOfRounds <= 0 gör att användaren får försöka igen tills ett positivt tal anges. try-catch-blocket hanterar textinmatningar och förhindrar att programmet kraschar.
+
+Efter ändringen testade jag alla inmatningsfält med både giltiga och ogiltiga värden. På så sätt kunde jag kontrollera att användaren kunde skriva in rätt värde igen utan att programmet avslutades.
+4. How have you used Git during the project?
+Simple English
+At the beginning of the project, we discussed what to name the Git repository and created it together.
+
+I created a separate branch called dev, where we worked on the development of the game. We used the shared repository to manage our code and changes.
+
+We discussed our code regularly. For example, when I did not understand why a particular variable was created before a loop or why a method was needed, I asked my teammate to explain it.
+
+We also asked each other questions about why we were creating certain variables and methods and what their purpose was. We discussed the ideas before implementing them.
+Enkel svenska
+I början av projektet diskuterade vi vad vårt Git-repository skulle heta och skapade det tillsammans.
+
+Jag skapade en separat branch som heter dev, där vi arbetade med utvecklingen av spelet. Vi använde samma repository för att hantera vår kod och våra ändringar.
+
+Vi diskuterade koden regelbundet. Till exempel, när jag inte förstod varför en viss variabel skapades före en loop eller varför en metod behövdes, frågade jag min projektkamrat om en förklaring.
+
+Vi ställde också frågor till varandra om varför vi skapade vissa variabler och metoder och vad de skulle användas till. Vi diskuterade idéerna innan vi började programmera.
+5. How have you used AI? Do you check the results?
+Simple English
+I used Claude to help me create the project report. The report included the game rules, instructions on how to start the game, an overview of the classes and methods, important coding decisions, and information about testing and debugging.
+
+I also used AI to understand and solve a coding problem. However, I checked the suggested solution by testing the code myself to make sure it worked correctly.
+Enkel svenska
+Jag använde Claude för att hjälpa mig att skapa projektrapporten. Rapporten innehöll spelreglerna, instruktioner för hur man startar spelet, en översikt över klasser och metoder, viktiga beslut i programmeringen samt information om testning och felsökning.
+
+Jag använde också AI för att förstå och lösa ett problem i koden. Men jag kontrollerade lösningen genom att själv testa koden för att se att den fungerade korrekt.
+6. What do you feel you learned from the project?
+Simple English
+During this project, I learned more about Java programming, classes, methods, loops and exception handling.
+
+I also learned that discussing problems with a teammate can help us understand things better. When I faced a problem, I discussed it with my teammate and explained what errors I found and how I solved them.
+
+We shared our knowledge and explained how we understood the concepts from the lectures. I also learned different ways to write and improve the code by discussing ideas with my teammate.
+
+Overall, I learned the importance of teamwork, communication, debugging and testing.
+Enkel svenska
+Under projektet lärde jag mig mer om Java-programmering, klasser, metoder, loopar och felhantering.
+
+Jag lärde mig också att det är bra att diskutera problem med en projektkamrat eftersom vi kan förstå saker bättre tillsammans. När jag stötte på problem berättade jag för min projektkamrat vilka fel jag hittade och hur jag löste dem.
+
+Vi delade våra kunskaper och förklarade hur vi hade förstått olika saker från föreläsningarna. Jag lärde mig också olika sätt att skriva och förbättra koden genom att diskutera idéer med min projektkamrat.
+
+Sammanfattningsvis lärde jag mig hur viktigt samarbete, kommunikation, felsökning och testning är.
